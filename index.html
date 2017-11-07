@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- <meta charset=utf-8/> -->
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+        <title>Remisería online!</title>
+
+        <!--[if lt IE 9]>
+          <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+
+        <!-- include jQuery -->
+        <script src="jquery-3.1.1.min.js"></script>
+        <!-- include leaflet -->
+        <link rel="stylesheet" href="./leaflet/leaflet.css" />
+        <script src="./leaflet/leaflet.js"></script>
+
+        <!-- include race, runner y view -->
+        <link rel="stylesheet" type="text/css" media="screen" href="view.css" />
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu+Condensed" rel="stylesheet">
+        <script src="travelRequest.js"></script>
+        <script src="carDriver.js"></script>
+        <script src="view.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.1.0/css/hover.css">
+        <link rel="stylesheet" href="estilos.css">
+    </head>
+
+
+    <body>
+        <header>
+            <div class="titulo">Bienvenido a la Remisería Online!<i class="fa fa-car" aria-hidden="true"></i></div>
+        </header>
+        <div class="contenedor">    
+            <div id="divPreferencias">
+                <form action="" method="get">
+                    <input type="text" name="origen" id="origen" placeholder="Origen">
+                    <input type="text" name="destino" id="destino" placeholder="Destino">
+                </form>
+                <h3>Ingrese sus Preferencias</h3>
+                <form action="  ">
+                    <span class="radioButton"><input  id="idModelo" type="radio" name="preferencia" value="modelo"><label for="idModelo"> Modelo</label></span>
+                    <span class="radioButton"><input  id="idChofer"type="radio" name="preferencia" value="modelo"><label for="idChofer"> Chofer</label></span>
+                <input class="hvr-buzz" type="submit" id="enviar">
+                </form>
+            </div>
+            <div id="mapaContainer">
+                <h1>Acá va el mapa!</h1>
+            </div>
+        </div>
+        
+    </body>
+</html>
