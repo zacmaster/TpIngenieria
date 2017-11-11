@@ -9,23 +9,34 @@
         <!--[if lt IE 9]>
           <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
-
+  
         <!-- include jQuery -->
-        <script src="jquery-3.1.1.min.js"></script>
+        <script src="js/jquery-3.1.1.min.js"></script>
+  
         <!-- include leaflet -->
         <link rel="stylesheet" href="./leaflet/leaflet.css" />
         <script src="./leaflet/leaflet.js"></script>
 
         <!-- include race, runner y view -->
-        <link rel="stylesheet" type="text/css" media="screen" href="view.css" />
+        <link rel="stylesheet" type="text/css" media="screen" href="css/view.css" />
         <link href="https://fonts.googleapis.com/css?family=Ubuntu+Condensed" rel="stylesheet">
-        <script src="travelRequest.js"></script>
-        <script src="carDriver.js"></script>
-        <script src="view.js"></script>
+        <script src="js/travelRequest.js"></script>
+        <script src="js/carDriver.js"></script>
+        <script src="js/view.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.1.0/css/hover.css">
-        <link rel="stylesheet" href="estilos.css">
+        <link rel="stylesheet" href="css/estilos.css">
+
+        <script>
+            $().ready(function(){
+                $('#divPreferenciasSelect').hide();
+
+                $('#checkSi').click(function(){
+                    $('#divPreferenciasSelect').toggle();                    
+                });                
+            });
+        </script>
     </head>
 
 
@@ -39,6 +50,50 @@
                     <input type="text" name="origen" id="origen" placeholder="Origen">
                     <input type="text" name="destino" id="destino" placeholder="Destino">
                 </form>
+
+                <br/> <br/>
+                
+                <h4>Preferencias 
+                    <input type="checkbox" name="gender" value="si" id="checkSi">
+                </h4>
+
+                    <div id="divPreferenciasSelect">
+                        <label for="auto">Modelo Auto: </label>
+                        <select id="comboAuto">
+                            <option value="volvo">Volvo</option>
+                            <option value="saab">Saab</option>
+                            <option value="opel">Opel</option>
+                            <option value="audi">Audi</option>
+                        </select>
+                        <br/> <br/>
+                        <label for="chofer">Chofer: </label>
+                        <select id="comboChofer">
+                            <option value="juan">Juan</option>
+                            <option value="pablo">Pablo</option>
+                            <option value="maria">Maria</option>
+                            <option value="juana">Juana</option>
+                        </select>
+                        <br/> <br/>
+                        <label for="color">Color: </label>
+                        <select id="comboColor">
+                            <option value="rojo">Rojo</option>
+                            <option value="negro">Negro</option>
+                            <option value="blanco">Blanco</option>
+                            <option value="amarillo">Amarillo</option>
+                        </select>
+                        <br/> <br/>
+                        <label for="año">Año: </label>
+                        <select id="comboAño">
+                            <option value="rojo">Rojo</option>
+                            <option value="negro">Negro</option>
+                            <option value="blanco">Blanco</option>
+                            <option value="amarillo">Amarillo</option>
+                        </select>
+                    </div>
+                    <br/> <br/>
+                
+                </div>
+                    <!--
                 <h3>Ingrese sus Preferencias</h3>
                 <form action="  ">
                     <span class="radioButton"><input  id="idModelo" type="radio" name="preferencia" value="modelo"><label for="idModelo"> Modelo</label></span>
@@ -46,15 +101,8 @@
                 <input class="hvr-buzz" type="submit" id="enviar">
                 </form>
             </div>
+        -->
             <div id="map"></div>
         </div>
-        <!-- include jQuery -->
-        <script src="jquery-3.1.1.min.js"></script>
-        <!-- include leaflet -->
-        <link rel="stylesheet" href="./leaflet/leaflet.css" />
-        <script src="./leaflet/leaflet.js"></script>
-        <script src="travelRequest.js"></script>
-        <script src="carDriver.js"></script>
-        <script src="view.js"></script>
     </body>
 </html>

@@ -8,10 +8,7 @@ header{
 	background: #e74c3c;
 	background-color: #FFEB3B;
 }
-body{
-	/*background-color: #ecf0f1; */
-	background-image: url("patron2.png");
-}
+
 .titulo{
 	text-align: center;
 	margin: auto;
