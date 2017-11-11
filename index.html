@@ -17,26 +17,16 @@
         <link rel="stylesheet" href="./leaflet/leaflet.css" />
         <script src="./leaflet/leaflet.js"></script>
 
-        <!-- include race, runner y view -->
         <link rel="stylesheet" type="text/css" media="screen" href="css/view.css" />
         <link href="https://fonts.googleapis.com/css?family=Ubuntu+Condensed" rel="stylesheet">
         <script src="js/travelRequest.js"></script>
         <script src="js/carDriver.js"></script>
         <script src="js/view.js"></script>
+        <script src="js/preferencias.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.1.0/css/hover.css">
         <link rel="stylesheet" href="css/estilos.css">
-
-        <script>
-            $().ready(function(){
-                $('#divPreferenciasSelect').hide();
-
-                $('#checkSi').click(function(){
-                    $('#divPreferenciasSelect').toggle();                    
-                });                
-            });
-        </script>
     </head>
 
 
@@ -93,15 +83,7 @@
                     <br/> <br/>
                 
                 </div>
-                    <!--
-                <h3>Ingrese sus Preferencias</h3>
-                <form action="  ">
-                    <span class="radioButton"><input  id="idModelo" type="radio" name="preferencia" value="modelo"><label for="idModelo"> Modelo</label></span>
-                    <span class="radioButton"><input  id="idChofer"type="radio" name="preferencia" value="modelo"><label for="idChofer"> Chofer</label></span>
-                <input class="hvr-buzz" type="submit" id="enviar">
-                </form>
-            </div>
-        -->
+                
             <div id="map"></div>
         </div>
     </body>
