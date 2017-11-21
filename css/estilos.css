@@ -19,19 +19,23 @@ header{
 	color: white;
 	text-shadow: 0px 10px 40px gray;
 }
+
+.preferencias{
+	padding: 20px;
+	font-family: 'Ubuntu Condensed', sans-serif;
+	color: black;
+}
+
 #divPreferencias{
 	box-shadow: 0px 20px 15px gray;
-	/*margin-top: 300px;*/
-	width: 300px;
 	background-color: #FFEB3B;
-	/*margin: auto;*/
 	margin-top: 0px;
 	text-align: center;
 }
+
 #divPreferencias h3{
 	padding: 20px;
 	font-family: 'Ubuntu Condensed', sans-serif;
-	/*font: 20px 'Acme', sans-serif ;*/
 	color: black;
 }
 #divPreferencias form{
@@ -91,7 +95,6 @@ form span label:hover{
 	cursor: pointer;
 }
 
-
 .hvr-buzz:hover{
 	box-shadow: 0px 1px 2px  black;
 }
@@ -101,3 +104,50 @@ form span label:hover{
 	width: 100%;
 	height: 89vh;
 }
+
+#divChoferes table{
+		font-family: arial, sans-serif;
+		border-collapse: collapse;
+		width: 100%;
+	}
+	
+#divChoferes td, th {
+		border: 1px solid #dddddd;
+		text-align: left;
+		padding: 8px;
+	}
+	
+#divChoferes tr:nth-child(even) {
+		background-color: #a0cc80;
+	}
+
+#tableChoferes	td:hover {
+		background-color: grey;
+	  }
+
+
+#estrellasClasificacion label {
+		font-size: 20px;
+	  }
+
+#estrellasClasificacion input[type="radio"] {
+	display: none;
+  }
+  
+#estrellasClasificacion  label {
+	color: grey;
+  }
+  
+.clasificacion {
+	direction: rtl;
+	unicode-bidi: bidi-override;
+  }
+  
+#estrellasClasificacion  label:hover,
+#estrellasClasificacion  label:hover ~ label {
+	color: orange;
+  }
+  
+#estrellasClasificacion  input[type="radio"]:checked ~ label {
+	color: orange;
+  }

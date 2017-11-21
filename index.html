@@ -11,80 +11,128 @@
         <![endif]-->
   
         <!-- include jQuery -->
-        <script src="js/jquery-3.1.1.min.js"></script>
+        <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
   
         <!-- include leaflet -->
         <link rel="stylesheet" href="./leaflet/leaflet.css" />
         <script src="./leaflet/leaflet.js"></script>
 
+
         <link rel="stylesheet" type="text/css" media="screen" href="css/view.css" />
         <link href="https://fonts.googleapis.com/css?family=Ubuntu+Condensed" rel="stylesheet">
-        <script src="js/travelRequest.js"></script>
-        <script src="js/carDriver.js"></script>
-        <script src="js/view.js"></script>
-        <script src="js/preferencias.js"></script>
+        <script type="text/javascript" src="js/chofer.js"></script>
+        <script type="text/javascript" src="js/config.js"></script>
+        <script type="text/javascript" src="js/cargarPosiciones.js"></script>
+        <script type="text/javascript" src="js/cargarChoferes.js"></script>
+        <script type="text/javascript" src="js/master.js"></script>
+        <script type="text/javascript" src="js/posicion.js"></script>
+        <script type="text/javascript" src="./MovingMarker.js"></script>
+        <script type="text/javascript" src="js/preferencias.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.1.0/css/hover.css">
         <link rel="stylesheet" href="css/estilos.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.js"></script>
     </head>
-
 
     <body>
         <header>
-            <div class="titulo">Bienvenido a la Remisería Online!<i class="fa fa-car" aria-hidden="true"></i></div>
+            <div class="titulo">Bienvenido a la Remisería Online¡
+            </div>
         </header>
-        <div class="contenedor">    
-            <div id="divPreferencias">
-                <form action="" method="get">
+            <form action="" method="get">
+                <div id="divPreferencias">
                     <input type="text" name="origen" id="origen" placeholder="Origen">
                     <input type="text" name="destino" id="destino" placeholder="Destino">
-                </form>
-
-                <br/><br/>
-                
-                <h4>Preferencias 
-                    <input type="checkbox" name="gender" value="si" id="checkSi">
-                </h4>
-
-                    <div id="divPreferenciasSelect">
+                    <br/><br/>
+                    
+                    <h4 class="preferencias">Preferencias
+                        <input type="checkbox" name="gender" value="si" id="checkSi">
+                    </h4>
+                    
+                    <div id="divPreferenciasSelect" class="preferencias">
                         <label for="auto">Modelo Auto: </label>
                         <select id="comboAuto">
-                            <option value="volvo">Volvo</option>
-                            <option value="saab">Saab</option>
-                            <option value="opel">Opel</option>
-                            <option value="audi">Audi</option>
                         </select>
                         <br/> <br/>
-                        <label for="chofer">Chofer: </label>
-                        <select id="comboChofer">
-                            <option value="juan">Juan</option>
-                            <option value="pablo">Pablo</option>
-                            <option value="maria">Maria</option>
-                            <option value="juana">Juana</option>
-                        </select>
-                        <br/> <br/>
+
                         <label for="color">Color: </label>
                         <select id="comboColor">
-                            <option value="rojo">Rojo</option>
-                            <option value="negro">Negro</option>
-                            <option value="blanco">Blanco</option>
-                            <option value="amarillo">Amarillo</option>
                         </select>
                         <br/> <br/>
+
                         <label for="año">Año: </label>
-                        <select id="comboAño">
-                            <option value="rojo">Rojo</option>
-                            <option value="negro">Negro</option>
-                            <option value="blanco">Blanco</option>
-                            <option value="amarillo">Amarillo</option>
+                        <select id="comboAño">    
                         </select>
+                        
+                        <br/> <br/>
+
+                        <label for="Clasificacion">Clasificacion: </label>
+                        <div id="estrellasClasificacion" class="clasificacion">
+                            <input id="radio1" type="radio" name="estrellas" value="5"><!--
+                            --><label for="radio1">★</label><!--
+                            --><input id="radio2" type="radio" name="estrellas" value="4"><!--
+                            --><label for="radio2">★</label><!--
+                            --><input id="radio3" type="radio" name="estrellas" value="3"><!--
+                            --><label for="radio3">★</label><!--
+                            --><input id="radio4" type="radio" name="estrellas" value="2"><!--
+                            --><label for="radio4">★</label><!--
+                            --><input id="radio5" type="radio" name="estrellas" value="1"><!--
+                            --><label for="radio5">★</label>
+                        </div>
                     </div>
+
                     <br/> <br/>
-                
+                    
+                    <input type="button" name="Submit" id="aceptar" value="Aceptar">
+                    <input type="button" name="cancelar" id="cancelar" value="Cancelar">
+
+                    <br/> <br/>
                 </div>
-                
-            <div id="map"></div>
-        </div>
+            </form>
+            <br/> <br/>
+            <br/> <br/>
+            
+            <div id="divChoferes">
+                <table id="tableChoferes">
+                    <tr>
+                      <th>Nombre y Apellido</th>
+                      <th>Estrellas</th>
+                      <th>Auto</th>
+                    </tr>
+                    <tr>
+                      <td>Alfreds Futterkiste</td>
+                      <td>*****</td>
+                      <td>Volkswagen Vento</td>
+                    </tr>
+                    <tr>
+                      <td>Jose Calderon</td>
+                      <td>***</td>
+                      <td>Volkswagen Fox</td>
+                    </tr>
+                    <tr>
+                      <td>Ernst Handel</td>
+                      <td>**</td>
+                      <td>Dodge Charger</td>
+                    </tr>
+                    <tr>
+                      <td>Island Trading</td>
+                      <td>****</td>
+                      <td>Batmobile</td>
+                    </tr>
+                    <tr>
+                      <td>Laughing Bacchus Winecellars</td>
+                      <td>*</td>
+                      <td>Renault 125</td>
+                    </tr>
+                    <tr>
+                      <td>Magazzini Alimentari Riuniti</td>
+                      <td>***</td>
+                      <td>Renault Fuego</td>
+                    </tr>
+                  </table>
+            </div>
+
     </body>
 </html>
