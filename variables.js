@@ -1,0 +1,1 @@
+var INCIDENCIAS = "http://snapcar.herokuapp.com/api/incidents";
